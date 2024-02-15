@@ -22,6 +22,8 @@ def crearGenero():
             else:
                 print("Este ID ya existe")
                 break
+    else:
+        generosList.append(genero)
     os.system('pause')
     with open(fileP, 'w') as file:
         json.dump(generosList, file, indent=2)
@@ -50,8 +52,8 @@ def eliminarGenero():
             json.dump(generosList, file, indent=2)
         os.system('pause')
         break
-def menuActores():
-    menu=["Crear genero","Listar genero","Eliminar genero"]
+def menuGeneros():
+    menu=["Crear genero","Listar genero","Eliminar genero","Salir"]
    
     while(True):
         os.system('cls')
@@ -68,5 +70,6 @@ def menuActores():
                     case 1: crearGenero()
                     case 2: leerGeneros()
                     case 3: eliminarGenero()
+                    case 4: break
         except ValueError:
             print(f"La opcion es invalida, porfavor ingrese algo valido.")

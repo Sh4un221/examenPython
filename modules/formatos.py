@@ -22,6 +22,8 @@ def crearFormato():
             else:
                 print("Este ID ya existe")
                 break
+    else:
+        formatosList.append(formato)
     os.system('pause')
     with open(fileP, 'w') as file:
         json.dump(formatosList, file, indent=2)
@@ -50,8 +52,8 @@ def eliminarFormato():
             json.dump(formatosList, file, indent=2)
         os.system('pause')
         break
-def menuActores():
-    menu=["Crear formato","Listar formato","Eliminar formato"]
+def menuFormatos():
+    menu=["Crear formato","Listar formato","Eliminar formato","Salir"]
    
     while(True):
         os.system('cls')
@@ -68,5 +70,6 @@ def menuActores():
                     case 1: crearFormato()
                     case 2: leerFormatos()
                     case 3: eliminarFormato()
+                    case 4: break
         except ValueError:
             print(f"La opcion es invalida, porfavor ingrese algo valido.")

@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": "P01",
+    "nombre": "Sufriendo en la prueba",
+    "duracion": "4 horas",
+    "sinopsis": "AYUDA",
+    "generos": [
+      {
+        "id": "G01",
+        "nombre": "Terror"
+      }
+    ],
+    "actores": [
+      {
+        "id": "A01",
+        "nombre": "Pablo"
+      }
+    ],
+    "formato": [
+      {
+        "id": "F01",
+        "nombre": "VHS"
+      }
+    ]
+  },
+  {
+    "id": "P02",
+    "nombre": "No me se peliculas de ese man",
+    "duracion": "2 horas",
+    "sinopsis": "No se",
+    "generos": [
+      {
+        "id": "G01",
+        "nombre": "Terror"
+      }
+    ],
+    "actores": [
+      {
+        "id": "A03",
+        "nombre": "Silvester Stallone"
+      }
+    ],
+    "formato": [
+      {
+        "id": "F01",
+        "nombre": "VHS"
+      }
+    ]
+  },
+  {
+    "id": "P03",
+    "nombre": "Bajando por el camino",
+    "duracion": "2 horas",
+    "sinopsis": "Bajando por el camino encontrara las cosas al lado de el arbol",
+    "generos": [
+      {
+        "id": "G01",
+        "nombre": "Terror"
+      }
+    ],
+    "actores": [
+      {
+        "id": "A03",
+        "nombre": "Silvester Stallone"
+      }
+    ],
+    "formato": [
+      {
+        "id": "F01",
+        "nombre": "VHS"
+      }
+    ]
+  }
+]

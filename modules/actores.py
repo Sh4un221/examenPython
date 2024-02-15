@@ -22,6 +22,8 @@ def crearActores():
             else:
                 print("Este ID ya existe")
                 break
+    else:
+        actoresList.append(actor)
     os.system('pause')
     with open(fileP, 'w') as file:
         json.dump(actoresList, file, indent=2)
@@ -51,7 +53,7 @@ def eliminarActor():
         os.system('pause')
         break
 def menuActores():
-    menu=["Crear actor","Listar actor","Eliminar actor"]
+    menu=["Crear actor","Listar actor","Eliminar actor","Salir"]
    
     while(True):
         os.system('cls')
@@ -68,5 +70,6 @@ def menuActores():
                     case 1: crearActores()
                     case 2: leerActores()
                     case 3: eliminarActor()
+                    case 4: break
         except ValueError:
             print(f"La opcion es invalida, porfavor ingrese algo valido.")
