@@ -25,9 +25,9 @@
   },
   {
     "id": "P02",
-    "nombre": "No me se peliculas de ese man",
+    "nombre": "Pelicula Buena",
     "duracion": "2 horas",
-    "sinopsis": "No se",
+    "sinopsis": "Una buena pelicula",
     "generos": [
       {
         "id": "G01",

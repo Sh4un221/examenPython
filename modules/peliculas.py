@@ -65,8 +65,51 @@ def eliminarPelicula():
             json.dump(peliculasList, file, indent=2)
         os.system('pause')
         break
+def editarPelicula():
+    leerPeliculas()
+    ban=True
+    while ban:
+        print("Cual es el codigo del genero que desea editar")
+        cod=int(input(""))
+        print(peliculasList[cod-1])
+        print("""
+              Esta seguro que desea editarlo?: 
+              1.Si
+              2.No
+              """)
+        opt=int(input(""))
+        if opt==1:
+            peliculae={
+            "id":(input("Ingrese ID de la pelicula: ")),
+            "nombre":(input("Ingrese nombre de la pelicula: ")),
+            "duracion":(input("Ingrese la duracion de la pelicula: ")),
+            "sinopsis":(input("Ingrese la sinopsis: ")),
+            "generos":[],
+            "actores":[],
+            "formato":[]                
+            }
+            agregarGenero(peliculae)
+            agregarActor(peliculae)
+            agregarFormato(peliculae)           
+            peliculasList[cod-1]=peliculae
+            with open(fileP, 'w') as file:
+                json.dump(peliculasList, file, indent=2)
+            print("Se modifico correctamente la pelicula")
+            os.system('pause')
+            break
+        else:
+            break  
+def buscarPelicula():
+    print("Ingrese el ID de la pelicula (Si no lo sabe puede mirar la lista de todas):")
+    id=input("")
+    for i,pelicula in enumerate(peliculasList):
+        if(id==pelicula['id']):
+            print(f"Nombre: {pelicula['nombre']}")
+    os.system('pause')
+    
+        
 def menuPeliculas():
-    menu=["Crear una pelicula","Listar peliculas","Eliminar pelicula","Salir"]
+    menu=["Crear una pelicula","Listar peliculas","Editar pelicula","Eliminar pelicula","Buscar pelicula","Salir"]
    
     while(True):
         os.system('cls')
@@ -82,8 +125,10 @@ def menuPeliculas():
                 match(opc):
                     case 1: crearPelicula()
                     case 2: leerPeliculas()
-                    case 3: eliminarPelicula()
-                    case 4: break
+                    case 3: editarPelicula()
+                    case 4: eliminarPelicula()
+                    case 5: buscarPelicula()
+                    case 6: break
 
         except ValueError:
             print(f"La opcion es invalida, porfavor ingrese algo valido.")
