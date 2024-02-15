@@ -1,7 +1,8 @@
 formatosList=list()
 generosList=list()
 peliculasList=list()
-generosList=list()
+actoresList=list()
+
 
 
 

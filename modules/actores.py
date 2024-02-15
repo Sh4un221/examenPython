@@ -1,32 +1,32 @@
 import os
 import json
-from .variables import generosList
+from .variables import actoresList
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 fileP = os.path.join(current_directory, '..', 'storage', 'actoresData.json')
 
 if os.path.exists(fileP) and os.path.getsize(fileP) > 0:
     with open(fileP, 'r') as file:
-        generosList.extend(json.load(file))
+        actoresList.extend(json.load(file))
 def crearActores():
     flag=True
     actor={
         "id":(input("Ingrese ID del actor: ")),
         "nombre":(input("Ingrese nombre del actor: "))
     }
-    if(len(generosList)>0):
-        for i,val in enumerate(generosList):
+    if(len(actoresList)>0):
+        for i,val in enumerate(actoresList):
             if val['id']!=actor['id']:
-                generosList.append(actor)
+                actoresList.append(actor)
                 break
             else:
                 print("Este ID ya existe")
                 break
     os.system('pause')
     with open(fileP, 'w') as file:
-        json.dump(generosList, file, indent=2)
+        json.dump(actoresList, file, indent=2)
 def leerActores():
-    for i,val in enumerate(generosList):
+    for i,val in enumerate(actoresList):
         print(f"""
               Codigo: {i+1}
               ID: {val['id']}
@@ -40,14 +40,14 @@ def eliminarActor():
     while ban:
         print("Cual es el codigo del actor que desea eliminar")
         cod=int(input(""))
-        actor=generosList.pop(cod-1)
+        actor=actoresList.pop(cod-1)
         
         print(f"""
               Se elimino el actor:
               Nombre {actor['nombre']}
               """)
         with open(fileP, 'w') as file:
-            json.dump(generosList, file, indent=2)
+            json.dump(actoresList, file, indent=2)
         os.system('pause')
         break
 def menuActores():
