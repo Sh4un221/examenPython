@@ -1,15 +1,1 @@
-{
-    "blockbuster":{
-        "peliculas":{
-            "P01":{
-                "id":"",
-                "nombre":"",
-                "duracion":"",
-                "sinopsis":"",
-                "generos":{},
-                "actores":{},
-                "formato":{}
-            }
-        }
-    }
-}
+{}
